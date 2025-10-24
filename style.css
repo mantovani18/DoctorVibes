@@ -1,0 +1,68 @@
+:root{
+	/* palette - adjust these to match your Logo.png colors if needed */
+	--primary: #0b69ff; /* vivid blue (logo primary) */
+	--primary-600: #0b5fff;
+	--primary-200: #e8f0ff;
+	--bg: #f3f7ff; /* soft blue background */
+	--card: #ffffff;
+	--muted: #55607a;
+	--danger:#dc2626;
+	--success:#16a34a;
+}
+*{box-sizing:border-box}
+body{font-family:Segoe UI, Roboto, Arial, sans-serif;margin:0;background:var(--bg);color:#111}
+.top{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;background:linear-gradient(90deg,#fff,var(--primary-200));box-shadow:0 1px 6px rgba(11,105,255,0.08)}
+.top h1{margin:0;font-size:18px}
+.role-row{display:flex;gap:8px;align-items:center}
+.role-row input, .role-row select{padding:6px 8px;border:1px solid rgba(11,105,255,0.12);border-radius:4px}
+main{max-width:1000px;margin:24px auto;padding:0 16px}
+section{background:var(--card);padding:16px;border-radius:8px;box-shadow:0 1px 4px rgba(2,6,23,.04);margin-bottom:16px}
+.hidden{display:none}
+form label{display:block;margin-top:8px;font-weight:600;color:var(--muted);font-size:13px}
+input[type=text],input,textarea,select{width:100%;padding:8px;border:1px solid #e6eef6;border-radius:6px;margin-top:6px}
+textarea{min-height:80px}
+button{cursor:pointer;padding:8px 12px;border-radius:6px;border:0;background:var(--primary);color:#fff}
+button.primary{background:var(--primary)}
+button.success{background:var(--success)}
+button.danger{background:var(--danger)}
+.card{border:1px solid #f1f5f9;padding:12px;border-radius:8px;margin-bottom:10px;background:linear-gradient(180deg,#fff,#fcfeff)}
+.card header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.c-meta small{color:var(--muted)}
+.c-answers p{margin:6px 0}
+.c-actions{margin-top:8px;display:flex;gap:8px}
+.hint{margin-top:10px;color:var(--muted);font-size:13px}
+
+.doctor-card{border:1px solid #eef2ff;padding:10px;border-radius:8px;margin-bottom:8px;background:linear-gradient(180deg,#fff,#fbfdff)}
+.doctor-card header{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.doctor-card .d-contact{color:var(--muted);font-size:13px;margin-bottom:6px}
+.doctor-card .d-bio{font-size:13px;color:#111}
+.doctor-card .d-actions{margin-top:8px;display:flex;gap:8px}
+
+.d-available{background:#10b981;color:#fff;padding:4px 8px;border-radius:999px;font-size:12px}
+.d-available.off{background:#9ca3af}
+
+/* entry overlay */
+.entry-overlay{ position:fixed; inset:0; background:rgba(0,0,0,0.45); display:flex; align-items:center; justify-content:center; z-index:9999 }
+.entry-overlay .entry-box{ background:#fff; padding:20px; border-radius:8px; width:320px; box-shadow:0 8px 30px rgba(0,0,0,0.25) }
+.entry-overlay h2{ margin:0 0 12px 0; font-size:18px }
+.entry-overlay form label{ display:block; margin-top:8px; font-size:13px }
+.entry-overlay input, .entry-overlay select{ width:100%; padding:8px; margin-top:6px; border:1px solid #ddd; border-radius:6px }
+.entry-overlay button{ margin-top:12px; width:100%; padding:10px; background:var(--primary); color:#fff; border:0; border-radius:6px }
+.muted{ background:transparent; color:var(--primary); border:1px solid rgba(11,105,255,0.12); padding:6px 8px; border-radius:6px; cursor:pointer }
+.muted:hover{ background:rgba(11,105,255,0.06) }
+.entry-field{ display:block }
+.entry-field-creds{ display:none }
+
+.moderator-grid{display:grid;grid-template-columns:1fr;gap:12px}
+@media(min-width:900px) and (text-align:center){
+	.moderator-grid{grid-template-columns:1fr 360px}
+}
+
+@media(min-width:900px){
+	.role-row input#userName{width:220px}
+}
+
+/* doctor search */
+.doctor-search{margin-bottom:8px}
+.doctor-search input{padding:8px;border:1px solid #e6eef6;border-radius:6px;width:100%}
+
