@@ -11,7 +11,7 @@
 }
 *{box-sizing:border-box}
 body{font-family:Segoe UI, Roboto, Arial, sans-serif;margin:0;background:var(--bg);color:#111}
-.top{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;background:linear-gradient(90deg,#fff,var(--primary-200));box-shadow:0 1px 6px rgba(11,105,255,0.08)}
+.top{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;background:linear-gradient(90deg,#fff,var(--primary-200));box-shadow:0 1px 6px rgba(11,105,255,0.08);flex-wrap:wrap;gap:12px}
 .top h1{margin:0;font-size:18px}
 .role-row{display:flex;gap:8px;align-items:center}
 .role-row input, .role-row select{padding:6px 8px;border:1px solid rgba(11,105,255,0.12);border-radius:4px}
@@ -54,8 +54,8 @@ button.danger{background:var(--danger)}
 .entry-field-creds{ display:none }
 
 .moderator-grid{display:grid;grid-template-columns:1fr;gap:12px}
-@media(min-width:900px) and (text-align:center){
-	.moderator-grid{grid-template-columns:1fr 360px}
+@media (min-width:900px){
+    .moderator-grid{grid-template-columns:1fr 360px}
 }
 
 @media(min-width:900px){
@@ -65,4 +65,47 @@ button.danger{background:var(--danger)}
 /* doctor search */
 .doctor-search{margin-bottom:8px}
 .doctor-search input{padding:8px;border:1px solid #e6eef6;border-radius:6px;width:100%}
+
+/* Responsive: mobile-first adjustments */
+@media (max-width: 600px) {
+	.top{padding:12px 14px}
+	.top h1{font-size:16px}
+	.top > div{display:flex;align-items:center;gap:10px}
+	.role-row{width:100%;justify-content:flex-end;margin-top:8px;gap:6px}
+
+	main{margin:12px auto;padding:0 12px}
+	section{padding:12px;border-radius:8px}
+
+	/* make overlay/dialogs fluid on small screens */
+	.entry-overlay .entry-box{width:90%;max-width:460px;padding:16px}
+
+	/* stack card header content vertically for narrow screens */
+	.card header, .doctor-card header{display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+
+	/* doctor-card: make avatar and body align nicely */
+	.doctor-card{display:flex;gap:12px;align-items:flex-start}
+	.doctor-card img{flex:0 0 48px;width:48px;height:48px}
+	.doctor-card header{display:block;margin:0}
+
+	.c-actions,.d-actions{display:flex;flex-wrap:wrap;gap:8px}
+
+	/* reduce large fixed paddings inside modals (comms modal textarea is already flexible) */
+	#commsModal > div{padding:10px}
+
+	/* ensure form controls are touch-friendly */
+	input,textarea,select,button{font-size:15px}
+}
+
+/* Medium screens: small tablets */
+@media (min-width:601px) and (max-width:900px){
+	.top{padding:14px}
+	.top img{height:56px;width:56px}
+	.entry-overlay .entry-box{width:86%;max-width:520px}
+	main{max-width:720px}
+}
+
+/* Large screens: keep existing desktop layout but ensure grids behave */
+@media (min-width:901px){
+	main{max-width:1000px}
+}
 
